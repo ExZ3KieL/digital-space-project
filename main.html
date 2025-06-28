@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .checkbox-container {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .login-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Student Login</h2>
+    <input type="text" id="username" placeholder="Enter your username" />
+    <div class="checkbox-container">
+      <input type="checkbox" id="studentCheck" />
+      <label for="studentCheck">I am a student</label>
+    </div>
+    <button class="login-button" onclick="verifyLogin()">Login</button>
+  </div>
+
+  <script>
+    function verifyLogin() {
+      const username = document.getElementById('username').value;
+      const isStudent = document.getElementById('studentCheck').checked;
+
+      if (!username) {
+        alert("Please enter your username.");
+        return;
+      }
+
+      if (!isStudent) {
+        alert("You must confirm that you are a student.");
+        return;
+      }
+
+      alert("Welcome, " + username + "! You are verified as a student.");
+    }
+  </script>
+
+</body>
+</html>
